@@ -1,12 +1,13 @@
 package co.memory.fighter;
 
-import java.util.Scanner;
-
 public class Personnage {
 
-    private String nom;
-    private int pv;
+    
 
+	private String nom;
+    private int pv;
+    private int typeAttack;
+	private int typeParrade;
 
 
 
@@ -19,7 +20,7 @@ public class Personnage {
         System.out.println("je suis "+ this.getNom()+" j'ai: "+ this.getPv()+" pv");
     }
 
-
+    
 
 
 
@@ -38,5 +39,27 @@ public class Personnage {
     public void setPv(int pv) {
         this.pv = pv;
     }
+    
+    public int getTypeAttack() {
+		return typeAttack;
+	}
+
+	public void setTypeAttack(int typeAttack) {
+		this.typeAttack = typeAttack;
+	}
+
+	public int getTypeParrade() {
+		return typeParrade;
+	}
+
+	public void setTypeParrade(int typeParrade) {
+		this.typeParrade = typeParrade;
+	}
+
+	@Override
+	public String toString() {
+		return  nom + " : pv=" + pv;
+	}
+	
 
 }

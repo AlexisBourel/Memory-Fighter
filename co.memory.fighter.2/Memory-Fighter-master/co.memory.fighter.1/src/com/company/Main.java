@@ -1,5 +1,6 @@
 package com.company;
 
+import co.memory.fighter.Combat;
 import co.memory.fighter.Enemy;
 import co.memory.fighter.Player;
 
@@ -14,14 +15,8 @@ public class Main {
         Enemy enemy1 = new Enemy("John Doe",20);
         enemy1.SePresenter();
 
-        player1.donnerCoup();
-        enemy1.parer();
-
-        player1.parer();
-        enemy1.donnerCoup();
-
-
-
+        Combat combat1 = new Combat(player1, enemy1);
+        
 
 
 

@@ -1,46 +1,40 @@
 package co.memory.fighter;
 
 
-import co.memory.interfaces.DonnerCoup;
-import co.memory.interfaces.Parade;
+public class Enemy extends Personnage{
 
-public class Enemy extends Personnage implements DonnerCoup,Parade {
-
+	
 
     public Enemy(String nom, int pv) {
         super(nom, pv);
     }
 
 
-    @Override
-    public int donnerCoup() {
-
-        int coup = 0;
-        if(Enemy.super.getPv() >= 10) {
-            coup = 1;
-            System.out.println(Enemy.super.getNom() + " donne un high kick!");
+    public int attaquer() {
+        if(this.getPv() >= 10) {
+            System.out.println(this.getNom() + " donne un high kick!");
+            this.setTypeAttack(1);
         }
-        if(Enemy.super.getPv() < 10) {
-            coup = 3;
-            System.out.println(Enemy.super.getNom() + " donne un low kick");
+        if(this.getPv() < 10) {
+            System.out.println(this.getNom() + " donne un low kick");
+            this.setTypeAttack(3);
         }
 
-        return coup;
+        return this.getTypeAttack();
     }
 
-    @Override
+   
     public int parer() {
-        int parade = 0;
-        if(Enemy.super.getPv() >= 10) {
-            parade = 1;
-            System.out.println(Enemy.super.getNom() +" se met en garde haute");
+        if(this.getPv() >= 10) {
+            System.out.println(this.getNom() +" se met en garde haute");
+            this.setTypeParrade(1);
         }
-        if(Enemy.super.getPv() < 10) {
-            parade = 3;
-            System.out.println(Enemy.super.getNom() + " se met en garde basse");
+        if(this.getPv() < 10) {
+            System.out.println(this.getNom() + " se met en garde basse");
+            this.setTypeParrade(3);
         }
 
-        return parade;
+        return this.getTypeParrade();
 
     }
 }
